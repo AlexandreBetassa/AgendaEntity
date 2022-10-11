@@ -19,7 +19,7 @@ namespace AgendaEntityCF
         public static void Menu()
         {
             int op = Utils.ColetarValorInt("INFORME A OPERAÇÃO\n(0 - Sair)\n(1 - Cadastrar Novo usuario)\n" +
-                "(2 - Listar)\nInforme: ");
+                "(2 - Listar)\n(3 - Editar)\n(4 - Deletar)\nInforme: ");
             switch (op)
             {
                 case 0:
@@ -73,7 +73,7 @@ namespace AgendaEntityCF
             string nome = Utils.ColetarString("Informe o nome da pessoa a ser removida: ");
             var person = new PersonControlller().Select().SingleOrDefault(item => item.Name == nome);
             Console.WriteLine(person + "\n\n");
-            new PersonControlller().Delete(person); 
+            new PersonControlller().Delete(person);
         }
 
     }
